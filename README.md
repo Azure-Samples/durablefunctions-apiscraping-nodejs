@@ -1,57 +1,75 @@
-# Project Name
+---
+services: functions
+platforms: nodejs
+author: MaximRouiller
+---
 
-(short, 1-3 sentenced, description of the project)
+# Retrieve opened issue count on GitHub with Azure Durable Functions
 
-## Features
+## Build
 
-This project framework provides the following features:
+The project requires the latest version of the [Azure Functions CLI](https://github.com/Azure/azure-functions-core-tools).
 
-* Feature 1
-* Feature 2
-* ...
+It can be installed by running the following code:
 
-## Getting Started
+```bash
+npn i -g azure-functions-core-tools@core --unsafe-perm true
+```
 
-### Prerequisites
+More [installation options](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?WT.mc_id=durablejs-sample-marouill) are also available.
 
-(ideally very short, if any)
+## Running the Sample
 
-- OS
-- Library version
-- ...
+### Pre-requisite
 
-### Installation
+* GitHub Personal Access Token
+  * [How to create a Personal Access Token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+* [Azure Functions Tooling](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?WT.mc_id=durablejs-sample-marouill)
+* [Visual Studio Code](https://code.visualstudio.com/download?WT.mc_id=durablejs-sample-marouill) (optional)
+  * [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for debugging
+* Azure Subscription (if running on Azure)
+  * [Get a free Azure Trial Subscription](https://azure.microsoft.com/free/?WT.mc_id=durablejs-sample-marouill)
 
-(ideally very short)
+### Locally
 
-- npm install [package name]
-- mvn install
-- ...
+Change the `GitHubToken` value in `local.settings.json` to match your GitHub Personal Access Token created previously in the pre-requisite.
 
-### Quickstart
-(Add steps to get up and running quickly)
+To ensure that everything is configured properly run the following commands within the `FanOutFanInCrawler` folder.
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+```bash
+func extensions install
+npm install
+```
 
+Once the dependencies has been installed, you can either run it from VS Code by running `code .` and hitting F5 on your keyboard. If you want to run it from the command line, you can run it with the following command within the `FanOutFanInCrawler` folder.
 
-## Demo
+```bash
+func host start
+```
 
-A demo app is included to show how to use the project.
+### On Azure
 
-To run the demo, follow these steps:
+To deploy components on Azure you will require to [install](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&WT.mc_id=durablejs-sample-marouill) and [login](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest&WT.mc_id=durablejs-sample-marouill) with the Azure CLI.
 
-(Add steps to start up the demo)
+First, you will need to provision the service. Look into the `provision.ps1` file provided to familiarize yourself with the resources we are going to create.
 
-1.
-2.
-3.
+Then you can execute the file with the previously generated GitHub.
 
-## Resources
+```powershell
+.\provision.ps1 -githubToken <TOKEN> -resourceGroup <ResourceGroupName> -storageName <StorageAccountName> -functionName <FunctionName>
+```
 
-(Any additional resources or related projects)
+If you do not have PowerShell installed, you can simply take the commands within the file and run it manually.
 
-- Link to supporting information
-- Link to similar sample
-- ...
+# Contribute
+
+You can contribute to this sample by following [the guidelines](/CONTRIBUTE.md).
+
+# Resources
+
+* [Azure Functions Documentation](https://docs.microsoft.com/azure/azure-functions/?WT.mc_id=durablejs-sample-marouill)
+* [Introduction to Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview?WT.mc_id=durablejs-sample-marouill)
+* [Durable Functions overview](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview?WT.mc_id=durablejs-sample-marouill)
+* Durable Functions pattern used in this sample
+  * [Chaining](https://docs.microsoft.com/azure/azure-functions/durable-functions-sequence?WT.mc_id=durablejs-sample-marouill)
+  * [Fan-out/fan-in](https://docs.microsoft.com/azure/azure-functions/durable-functions-cloud-backup?WT.mc_id=durablejs-sample-marouill)

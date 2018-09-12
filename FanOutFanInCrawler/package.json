@@ -1,0 +1,13 @@
+{
+  "name": "fanoutfanincrawler",
+  "version": "1.0.0",
+  "description": "",
+  "author": "MaximRouiller",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/rest": "^15.11.1",
+    "azure-storage": "^2.10.1",
+    "durable-functions": "0.0.3",
+    "uuid": "^3.3.2"
+  }
+}
