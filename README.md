@@ -13,7 +13,7 @@ The project requires the latest version of the [Azure Functions CLI](https://git
 It can be installed by running the following code:
 
 ```bash
-npn i -g azure-functions-core-tools@core --unsafe-perm true
+npm i -g azure-functions-core-tools@core --unsafe-perm true
 ```
 
 More [installation options](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?WT.mc_id=durablejs-sample-marouill) are also available.
@@ -22,13 +22,13 @@ More [installation options](https://docs.microsoft.com/en-us/azure/azure-functio
 
 ### Pre-requisite
 
-* GitHub Personal Access Token
-  * [How to create a Personal Access Token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
-* [Azure Functions Tooling](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?WT.mc_id=durablejs-sample-marouill)
-* [Visual Studio Code](https://code.visualstudio.com/download?WT.mc_id=durablejs-sample-marouill) (optional)
-  * [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for debugging
-* Azure Subscription (if running on Azure)
-  * [Get a free Azure Trial Subscription](https://azure.microsoft.com/free/?WT.mc_id=durablejs-sample-marouill)
+- GitHub Personal Access Token
+  - [How to create a Personal Access Token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+- [Azure Functions Tooling](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?WT.mc_id=durablejs-sample-marouill)
+- [Visual Studio Code](https://code.visualstudio.com/download?WT.mc_id=durablejs-sample-marouill) (optional)
+  - [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for debugging
+- Azure Subscription (if running on Azure)
+  - [Get a free Azure Trial Subscription](https://azure.microsoft.com/free/?WT.mc_id=durablejs-sample-marouill)
 
 ### Locally
 
@@ -67,9 +67,9 @@ You can contribute to this sample by following [the guidelines](/CONTRIBUTE.md).
 
 # Resources
 
-* [Azure Functions Documentation](https://docs.microsoft.com/azure/azure-functions/?WT.mc_id=durablejs-sample-marouill)
-* [Introduction to Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview?WT.mc_id=durablejs-sample-marouill)
-* [Durable Functions overview](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview?WT.mc_id=durablejs-sample-marouill)
-* Durable Functions pattern used in this sample
-  * [Chaining](https://docs.microsoft.com/azure/azure-functions/durable-functions-sequence?WT.mc_id=durablejs-sample-marouill)
-  * [Fan-out/fan-in](https://docs.microsoft.com/azure/azure-functions/durable-functions-cloud-backup?WT.mc_id=durablejs-sample-marouill)
+- [Azure Functions Documentation](https://docs.microsoft.com/azure/azure-functions/?WT.mc_id=durablejs-sample-marouill)
+- [Introduction to Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview?WT.mc_id=durablejs-sample-marouill)
+- [Durable Functions overview](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview?WT.mc_id=durablejs-sample-marouill)
+- Durable Functions pattern used in this sample
+  - [Chaining](https://docs.microsoft.com/azure/azure-functions/durable-functions-sequence?WT.mc_id=durablejs-sample-marouill)
+  - [Fan-out/fan-in](https://docs.microsoft.com/azure/azure-functions/durable-functions-cloud-backup?WT.mc_id=durablejs-sample-marouill)
