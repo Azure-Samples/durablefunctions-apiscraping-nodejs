@@ -1,8 +1,12 @@
 {
   "name": "fanoutfanincrawler",
   "version": "1.0.0",
-  "description": "",
+  "description": "Demo to show Durable Functions with Fan out Fan in Pattern",
   "author": "MaximRouiller",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Azure-Samples/durablefunctions-apiscraping-nodejs"
+  },
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^15.11.1",
