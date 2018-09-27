@@ -4,6 +4,6 @@
     "FUNCTIONS_WORKER_RUNTIME": "node",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
-    "GitHubToken": "TOKEN HERE"
+    "GitHubToken": "8c183799584a3ee80482e01c880ff0c15b418de9"
   }
 }
