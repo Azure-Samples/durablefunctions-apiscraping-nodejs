@@ -1,7 +1,7 @@
 {
   "version": "2.0",
   "logging": {
-    "LogLevel": {      
+    "LogLevel": {
       "Default": "Trace"
     }
   }
