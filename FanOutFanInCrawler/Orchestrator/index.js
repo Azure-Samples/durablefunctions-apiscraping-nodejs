@@ -1,6 +1,6 @@
 const df = require('durable-functions')
 
-module.exports = df(function*(context) {
+module.exports = df.orchestrator(function*(context) {
   // retrieves the organization name from the Orchestrator_HttpStart function
   var organizationName = context.df.getInput()
   // retrieves the list of repositories for an organization by invoking a separate Activity Function.
