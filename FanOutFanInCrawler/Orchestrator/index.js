@@ -1,13 +1,11 @@
 const df = require('durable-functions')
 
-module.exports = df.orchestrator(function*(context) {
+module.exports = df.orchestrator(function* (context) {
   // retrieves the organization name from the Orchestrator_HttpStart function
-  var organizationName = context.df.getInput()
+  var organizationName = context.df.getInput();
+  
   // retrieves the list of repositories for an organization by invoking a separate Activity Function.
-  var repositories = yield context.df.callActivityAsync(
-    'GetAllRepositoriesForOrganization',
-    organizationName
-  )
+  var repositories = yield context.df.callActivity('GetAllRepositoriesForOrganization', organizationName);
 
   // Creates an array of task to store the result of each functions
   var output = []
@@ -15,7 +13,7 @@ module.exports = df.orchestrator(function*(context) {
     // Starting a `GetOpenedIssues` activity WITHOUT `yield`
     // This will starts Activity Functions in parallel instead of sequentially.
     output.push(
-      context.df.callActivityAsync('GetOpenedIssues', repositories[i])
+      context.df.callActivity('GetOpenedIssues', repositories[i])
     )
   }
 
@@ -23,7 +21,7 @@ module.exports = df.orchestrator(function*(context) {
   const results = yield context.df.Task.all(output)
 
   // Send the list to an Activity Function to save them to Blob Storage.
-  yield context.df.callActivityAsync('SaveRepositories', results)
+  yield context.df.callActivity('SaveRepositories', results)
 
   return context.instanceId
 })

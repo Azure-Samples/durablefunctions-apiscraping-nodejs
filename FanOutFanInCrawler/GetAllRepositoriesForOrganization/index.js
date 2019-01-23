@@ -8,9 +8,9 @@ octokit.authenticate({
   token: process.env['GitHubToken']
 })
 
-module.exports = async function(context, input) {
+module.exports = async function(context) {
   // retrieves the organization name from the Orchestrator function
-  var organizationName = input
+  var organizationName = context.bindings.input;
 
   var finalResult = []
   let page = 1
@@ -25,5 +25,6 @@ module.exports = async function(context, input) {
     // merge the paged results inside a single array
     finalResult = finalResult.concat(result.data)
   } while (result.data.length !== 0)
-  return finalResult
+
+  context.done(null, finalResult);  
 }

@@ -11,12 +11,12 @@
     {
       "type": "http",
       "direction": "out",
-      "name": "res"
+      "name": "$return"
     },
     {
       "name": "starter",
       "type": "orchestrationClient",
-      "direction": "out"
+      "direction": "in"
     }
   ]
 }

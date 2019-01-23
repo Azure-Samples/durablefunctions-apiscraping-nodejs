@@ -1,9 +1,10 @@
 const df = require('durable-functions')
 var storage = require('azure-storage')
 
-module.exports = async (context, input) => {
-  // `input` here is retrieved from the Orchestrator function `callActivityAsync` input parameter
-
+module.exports = async (context) => {
+  // `input` here is retrieved from the Orchestrator function `callActivity` input parameter
+  var input = context.bindings.input;
+  
   // create the table service for Blob Storage
   var tableService = storage.createTableService(
     process.env['AzureWebJobsStorage']

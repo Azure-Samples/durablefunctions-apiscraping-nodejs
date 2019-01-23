@@ -9,9 +9,10 @@ octokit.authenticate({
   token: process.env['GitHubToken']
 })
 
-module.exports = async function(context, input) {
-  // `input` here is retrieved from the Orchestrator function `callActivityAsync` input parameter
-
+module.exports = async function(context) {
+  // `input` here is retrieved from the Orchestrator function `callActivity` input parameter
+  var input = context.bindings.input;
+  
   let page = 1
   let issueCount = 0
 

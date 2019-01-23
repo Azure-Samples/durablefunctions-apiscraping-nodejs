@@ -1,16 +1,10 @@
-const uuid = require('uuid/v4')
+const df = require("durable-functions");
+module.exports = async function(context) {  
+  
+  const client = df.getClient(context);
+  const instanceId = await client.startNew('Orchestrator',  undefined, 'Nuget');
 
-module.exports = function(context, req, starter) {
-  var id = uuid()
+  context.log(`Started orchestration with ID = '${instanceId}'.`);
 
-  // Function input comes from the request content.
-  context.bindings.starter = [
-    {
-      FunctionName: 'Orchestrator',
-      Input: 'Nuget',
-      InstanceId: id
-    }
-  ]
-
-  context.done(null)
+  return client.createCheckStatusResponse(context.bindingData.req, instanceId);
 }
