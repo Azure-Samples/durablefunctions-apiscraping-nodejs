@@ -4,7 +4,7 @@
     "FUNCTIONS_WORKER_RUNTIME": "node",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
-    "AzureWebJobsSecretStorageType": "files", // temporary fix required for Azure Storage Emulator 5.8.0.0 and Azure Functions latest SDK.
+    "AzureWebJobsSecretStorageType": "files", 
     "GitHubToken": "YOUR TOKEN HERE"
   }
 }
