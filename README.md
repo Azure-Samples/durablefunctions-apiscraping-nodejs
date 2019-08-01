@@ -1,7 +1,16 @@
 ---
-services: functions
-platforms: nodejs
-author: MaximRouiller
+page_type: sample
+products:
+  - azure
+  - dotnet-core
+  - azure-functions
+  - azure-storage
+languages:
+  - javascript
+  - nodejs
+name: "Retrieve opened issue count on GitHub with Azure Durable Functions"
+urlFragment: retrieve-opened-issue-count-on-github-with-azure-durable-functions
+description: "Build an Azure Durable Functions that will scrape GitHub for opened issues and store them on Azure Storage."
 ---
 
 # Retrieve opened issue count on GitHub with Azure Durable Functions
