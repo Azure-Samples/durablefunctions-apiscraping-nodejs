@@ -69,11 +69,11 @@ Then you can execute the file with the previously generated GitHub.
 
 If you do not have PowerShell installed, you can simply take the commands within the file and run it manually.
 
-# Contribute
+## Contribute
 
 You can contribute to this sample by following [the guidelines](/CONTRIBUTE.md).
 
-# Resources
+## Resources
 
 - [Azure Functions Documentation](https://docs.microsoft.com/azure/azure-functions/?WT.mc_id=durablejs-sample-marouill)
 - [Introduction to Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview?WT.mc_id=durablejs-sample-marouill)
