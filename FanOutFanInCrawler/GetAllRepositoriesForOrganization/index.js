@@ -1,14 +1,11 @@
-const octokit = require('@octokit/rest')({
-  headers: {
-    'user-agent': 'FanOutFanInCrawler'
-  }
-})
-octokit.authenticate({
-  type: 'token',
-  token: process.env['GitHubToken']
-})
+const { Octokit } = require('@octokit/rest');
 
-module.exports = async function(context) {
+const octokit = new Octokit({
+  userAgent: 'FanOutFanInCrawler',
+  auth: `token ${process.env['GitHubToken']}`
+});
+
+module.exports = async function (context) {
   // retrieves the organization name from the Orchestrator function
   var organizationName = context.bindings.input;
 
@@ -16,7 +13,7 @@ module.exports = async function(context) {
   let page = 1
   do {
     // invoke the API to retrieve the list of repositories of a specific organization
-    var result = await octokit.repos.getForOrg({
+    var result = await octokit.repos.listForOrg({
       org: organizationName,
       type: 'public',
       page: page
@@ -26,5 +23,5 @@ module.exports = async function(context) {
     finalResult = finalResult.concat(result.data)
   } while (result.data.length !== 0)
 
-  context.done(null, finalResult);  
+  context.done(null, finalResult);
 }
