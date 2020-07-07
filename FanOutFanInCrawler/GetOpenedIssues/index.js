@@ -1,13 +1,10 @@
 const df = require('durable-functions')
-const octokit = require('@octokit/rest')({
-  headers: {
-    'user-agent': 'FanOutFanInCrawler'
-  }
-})
-octokit.authenticate({
-  type: 'token',
-  token: process.env['GitHubToken']
-})
+const { Octokit } = require('@octokit/rest');
+
+const octokit = new Octokit({
+  userAgent: 'FanOutFanInCrawler',
+  auth: `token ${process.env['GitHubToken']}`
+});
 
 module.exports = async function(context) {
   // `input` here is retrieved from the Orchestrator function `callActivity` input parameter
@@ -18,7 +15,7 @@ module.exports = async function(context) {
 
   do {
     // retrieves a list of open issues from a specific repository
-    var result = await octokit.issues.getForRepo({
+    var result = await octokit.issues.listForRepo({
       owner: input.owner.login,
       repo: input.name,
       state: 'open',
