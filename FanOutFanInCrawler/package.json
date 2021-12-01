@@ -9,9 +9,9 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@octokit/rest": "^18.0.0",
-    "azure-storage": "^2.10.3",
-    "durable-functions": "^1.4.3",
-    "uuid": "^8.2.0"
+    "@octokit/rest": "^18.12.0",
+    "azure-storage": "^2.10.4",
+    "durable-functions": "^1.5.3",
+    "uuid": "^8.3.2"
   }
 }
