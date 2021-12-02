@@ -10,8 +10,8 @@ languages:
 name: "Retrieve opened issue count on GitHub with Azure Durable Functions (Node)"
 urlFragment: retrieve-opened-issue-count-on-github-with-azure-durable-functions
 description: "Build an Azure Durable Functions that will scrape GitHub for opened issues and store them on Azure Storage."
-author: MaximRouiller
-ms.author: marouill
+extensions:
+  ms.author: marouill
 ---
 
 # Retrieve opened issue count on GitHub with Azure Durable Functions
