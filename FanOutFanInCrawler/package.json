@@ -11,7 +11,7 @@
   "dependencies": {
     "@octokit/rest": "^18.12.0",
     "azure-storage": "^2.10.4",
-    "durable-functions": "^1.5.3",
+    "durable-functions": "^1.5.4",
     "uuid": "^8.3.2"
   }
 }
